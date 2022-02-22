@@ -5,16 +5,12 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
-
   <body>
-
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon container d-flex flex-row bd-highlight mb-3">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex flex-row bd-highlight">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="https://static.vecteezy.com/system/resources/previews/000/372/191/original/red-hot-european-style-sports-car-cartoon-vector-illustration.jpg" />
@@ -22,43 +18,23 @@
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
-        <%# <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Messages</a>
-              </li>
-              <li class="nav-item dropdown">
-                <img class="avatar dropdown-toggle" id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                </div>
-              </li> %>
-              <!--li class="nav-item"-->
-              <!--/li-->
-          </ul>
-        </div>
-      </div>
+      </ul>
     </div>
-
-  <%= yield %>
-
-  <div class="footer container mt-auto py-3 bg-light">
-      <div class="footer-links position-relative">
-        <a href="#"><i class="fab fa-github"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-linkedin"></i></a>
-      </div>
-      <div class="footer-copyright">
-      </div>
   </div>
-      <p class="notice"><%= notice %></p>
-      <p class="alert"><%= alert %></p>
-  </body>
+</div>
+<%= yield %>
+<div class="footer container-fluid mt-auto py-3 bg-light">
+  <div class="footer-links position-relative">
+    <a href="#"><i class="fab fa-github"></i></a>
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-facebook"></i></a>
+    <a href="#"><i class="fab fa-twitter"></i></a>
+    <a href="#"><i class="fab fa-linkedin"></i></a>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </div>
+  <div class="footer-copyright">
+  </div>
+</div>
+</body>
 </html>
