@@ -1,0 +1,17 @@
+<div class ="container sticky_footer">
+  <div class="container">
+    <% @cars.each do |car| %>
+      <div class="card" style="width: 18rem;">
+        <img src="https://static.vecteezy.com/system/resources/previews/000/372/191/original/red-hot-european-style-sports-car-cartoon-vector-illustration.jpg" class="card-img-top" alt="...">
+        <h5 class="card-title"><%= car.model  %></h5>
+        <p class="card-text"><%= car.brand  %></p>
+        <div class="d-flex justify-content-between cards-display align-self-center">
+          <a href="#" class="btn btn-dark ">Check me</a>
+          <div class="mt-2">
+            <%="  #{car.price} €  "%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
