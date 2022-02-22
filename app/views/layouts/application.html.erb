@@ -10,7 +10,7 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
   </head>
   <body>
-    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon container d-flex flex-row bd-highlight mb-3">
+    <div class="navbar navbar-expand-sm navbar-light navbar-lewagon d-flex flex-row bd-highlight">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <img src="https://static.vecteezy.com/system/resources/previews/000/372/191/original/red-hot-european-style-sports-car-cartoon-vector-illustration.jpg" />
@@ -23,18 +23,18 @@
   </div>
 </div>
 <%= yield %>
-<div class="footer container mt-auto py-3 bg-light">
+<div class="footer container-fluid mt-auto py-3 bg-light">
   <div class="footer-links position-relative">
     <a href="#"><i class="fab fa-github"></i></a>
     <a href="#"><i class="fab fa-instagram"></i></a>
     <a href="#"><i class="fab fa-facebook"></i></a>
     <a href="#"><i class="fab fa-twitter"></i></a>
     <a href="#"><i class="fab fa-linkedin"></i></a>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </div>
   <div class="footer-copyright">
   </div>
 </div>
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
 </body>
 </html>
