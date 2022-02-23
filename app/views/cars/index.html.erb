@@ -3,10 +3,10 @@
     <% @cars.each do |car| %>
       <a href="#" class="card" style="width: 18rem;">
       <%= image_tag "#{rand(9)}.jpg", class: 'card-img-top', id: 'identifier', style: 'width: 280px; height: 200px' %>
-      <h5 class="card-title"><strong><%= car.model  %></strong></h5>
-      <p class="card-text"><%= car.brand  %></p>
+      <h5 class="card-title"><strong><%= car.brand  %></strong></h5>
+      <p class="card-text"><%= car.model  %></p>
       <div class="d-flex mt-2">
-          <h3><strong><%="#{car.price} € / day"%></h3></strong>
+          <h4><strong><%="#{car.price} € / day"%></h4></strong>
       </div>
       </a>
     <% end %>
