@@ -1,6 +1,6 @@
 <div class="container sticky_footer pt-3 ">
   <h1><%= @car.brand %>, <%= @car.model %></h1>
-  <%= render "carousel" %>
+  <%= render :partial => 'carousel', locals: { car: @car } %>
   <div class="car-info d-flex justify-contents-center mt-3">
     <button class="btn btn-primary  flex-grow-1">Book me</button>
   </div>

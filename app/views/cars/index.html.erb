@@ -1,14 +1,14 @@
 <div class ="container sticky_footer">
   <div class="cards-container" >
     <% @cars.each do |car| %>
-      <a href="#" class="card" style="width: 18rem;">
-      <%= image_tag "#{rand(9)}.jpg", class: 'card-img-top', id: 'identifier', style: 'width: 280px; height: 200px' %>
-      <h5 class="card-title"><strong><%= car.brand  %></strong></h5>
-      <p class="card-text"><%= car.model  %></p>
-      <div class="d-flex mt-2">
-          <h4><strong><%="#{car.price} € / day"%></h4></strong>
-      </div>
-      </a>
+      <%= link_to car_path(car), class: "card", style: "width: 18rem" do %>
+        <%= image_tag "#{rand(9)}.jpg", class: 'card-img-top', id: 'identifier', style: 'width: 280px; height: 200px' %>
+        <h5 class="card-title"><strong><%= car.brand  %></strong></h5>
+        <p class="card-text"><%= car.model  %></p>
+        <div class="d-flex mt-2">
+            <h4><strong><%="#{car.price} € / day"%></h4></strong>
+        </div>
+      <% end %>
     <% end %>
   </div>
 </div>
