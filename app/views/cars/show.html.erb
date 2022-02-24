@@ -1,6 +1,13 @@
 <div class="container sticky_footer pt-3 ">
   <h1><%= @car.brand %>, <%= @car.model %></h1>
+  <div class="d-flex big-pic">
+    <img src="https://images.unsplash.com/photo-1521657142174-c7353dc830cd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80">
+  </div>
+
+  <p><%= @car.description %></p>
+  <%= render :partial => 'booking', locals: { rental: @rental } %>
   <%= render :partial => 'carousel', locals: { car: @car } %>
+
   <div class="car-info d-flex justify-contents-center mt-3">
     <button class="btn btn-primary  flex-grow-1">Book me</button>
   </div>
