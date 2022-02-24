@@ -5,6 +5,7 @@ class CarsController < ApplicationController
 
   def show
     @car = Car.find(params[:id])
+    @rental = Rental.new
   end
 
   def new
@@ -20,6 +21,11 @@ class CarsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @car = Car.find(params[:id])
+    @car.destroy
   end
 
   private
