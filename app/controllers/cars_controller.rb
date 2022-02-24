@@ -13,7 +13,8 @@ class CarsController < ApplicationController
 
   def create
     @car = Car.new(strong_params)
-    @car.user = User.all.sample
+    # @car.user = User.all.sample
+    @car.user = current_user
     if @car.save
       redirect_to car_path(@car)
     else

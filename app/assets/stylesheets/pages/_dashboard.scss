@@ -1,5 +1,5 @@
 .dashboard-container {
-  height: calc((100vh - 156px)/3);
+  height: calc((100vh - 156px) / 3);
 }
 
 .dashboard-card {
@@ -9,14 +9,24 @@
 
 .swipe-card {
   background-color: grey;
-  width: 200px;
+  // width: 200px;
   margin-left: 5px;
   background-size: cover;
   background-position: center;
   color: white;
-  flex-basis: 200px;
+  flex-basis: 350px;
   flex-shrink: 0;
   flex-grow: 0;
   border-radius: 5px;
   padding: 5px;
+
+  h5 {
+    text-align: center;
+    font-size: 1.8rem;
+    text-shadow: 2px 2px #00000069;
+  }
+  p {
+    font-size: 1.1rem;
+    text-shadow: 2px 2px #00000069;
+  }
 }
