@@ -1,0 +1,22 @@
+.dashboard-container {
+  height: calc((100vh - 156px)/3);
+}
+
+.dashboard-card {
+  overflow: scroll;
+  height: 80%;
+}
+
+.swipe-card {
+  background-color: grey;
+  width: 200px;
+  margin-left: 5px;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  flex-basis: 200px;
+  flex-shrink: 0;
+  flex-grow: 0;
+  border-radius: 5px;
+  padding: 5px;
+}
