@@ -1,10 +1,10 @@
 class RentalsController < ApplicationController
   def create
     @rental = Rental.new(strong_params)
-    @rental.car = Car.all.sample
-    @rental.user = User.all.sample
+    @rental.car = Car.find(params[:car_id])
+    @rental.user = current_user
     if @rental.save
-      redirect_to cars_path
+      redirect_to dashboard_path
     else
       render :new
     end
