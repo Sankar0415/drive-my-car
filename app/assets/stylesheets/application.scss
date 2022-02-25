@@ -11,3 +11,9 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400&display=swap");
+* {
+  font-family: "Quicksand", sans-serif;
+  // font-family: "Open Sans Condensed", sans-serif;
+}

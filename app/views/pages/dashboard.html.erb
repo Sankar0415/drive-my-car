@@ -1,43 +1,55 @@
 <div class="sticky_footer d-flex flex-column container">
-  <div class="dashboard-container">
-    <h3 class="text-center mb-0">My cars</h3>
-    <div class="dashboard-card w-100 d-flex">
-      <% @mycars.each do |car| %>
-        <div class="swipe-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= car.photo.url %>)">
-          <h5 class="card-brand"><strong><%= car.brand  %></strong></h5>
-          <p class="card-model"><%= car.model  %></p>
-          <p class="card-model"><%= car.price  %>€ / day</p>
-          <%= link_to "Show car", car_path(car),class: "btn btn-primary" %>
-        </div>
-      <% end %>
+  <% if @mycars.empty? %>
+    <h3 class="text-center my-3">You have not added any cars yet</h3>
+  <% else %>
+    <div class="dashboard-container">
+      <h3 class="text-center mb-0">My cars</h3>
+      <div class="dashboard-card w-100 d-flex">
+        <% @mycars.each do |car| %>
+          <div class="swipe-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= car.photo.url %>)">
+            <h5 class="card-brand"><strong><%= car.brand  %></strong></h5>
+            <p class="card-model"><%= car.model  %></p>
+            <p class="card-model"><%= car.price  %>€ / day</p>
+            <%= link_to "Show car", car_path(car),class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="dashboard-container">
-    <h3 class="text-center mb-0">My rentals</h3>
-    <div class="dashboard-card w-100 d-flex">
-      <% @myrentals.each do |rental| %>
-        <div class="swipe-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= rental.car.photo.url %>)">
-          <h5 class="card-brand"><strong><%= rental.car.brand  %></strong></h5>
-          <p class="card-model"><%= rental.car.model  %></p>
-          <p class="card-model"><strong>Rental begin: </strong> <%= rental.rental_begin %></p>
-          <p class="card-model"><strong>Rental end: </strong> <%= rental.rental_end %></p>
-          <p class="card-model"><strong>Price: </strong> <%= rental.car.price * ((rental.rental_end - rental.rental_begin).to_i) %>€</p>
-        </div>
-      <% end %>
+  <% end %>
+  <% if @myrentals.empty? %>
+    <h3 class="text-center mb-3">You have no rentals yet</h3>
+  <% else %>
+    <div class="dashboard-container">
+      <h3 class="text-center mb-0">My rentals</h3>
+      <div class="dashboard-card w-100 d-flex">
+        <% @myrentals.each do |rental| %>
+          <div class="swipe-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= rental.car.photo.url %>)">
+            <h5 class="card-brand"><strong><%= rental.car.brand  %></strong></h5>
+            <p class="card-model"><%= rental.car.model  %></p>
+            <p class="card-model"><strong>Rental begin: </strong> <%= rental.rental_begin %></p>
+            <p class="card-model"><strong>Rental end: </strong> <%= rental.rental_end %></p>
+            <p class="card-model"><strong>Price: </strong> <%= rental.car.price * ((rental.rental_end - rental.rental_begin).to_i) %>€</p>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
-  <div class="dashboard-container">
-    <h3 class="text-center mb-0">Rentals of my cars</h3>
-    <div class="dashboard-card w-100 d-flex">
-      <% @rentalsofmycar.each do |rental| %>
-        <div class="swipe-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= rental.car.photo.url %>)">
-          <h5 class="card-brand"><strong><%= rental.car.brand  %></strong></h5>
-          <p class="card-model"><%= rental.car.model  %></p>
-          <p class="card-model"><strong>Rental begin: </strong> <%= rental.rental_begin %></p>
-          <p class="card-model"><strong>Rental end: </strong> <%= rental.rental_end %></p>
-          <p class="card-model"><strong>Revenue: </strong> <%= rental.car.price * ((rental.rental_end - rental.rental_begin).to_i) %>€</p>
-        </div>
-      <% end %>
+  <% end %>
+  <% if @rentalsofmycar.empty? %>
+    <h3 class="text-center mb-3">None of your cars is rented yet</h3>
+  <% else %>
+    <div class="dashboard-container">
+      <h3 class="text-center mb-0">Rentals of my cars</h3>
+      <div class="dashboard-card w-100 d-flex">
+        <% @rentalsofmycar.each do |rental| %>
+          <div class="swipe-card" style="background-image: linear-gradient(to top, rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url(<%= rental.car.photo.url %>)">
+            <h5 class="card-brand"><strong><%= rental.car.brand  %></strong></h5>
+            <p class="card-model"><%= rental.car.model  %></p>
+            <p class="card-model"><strong>Rental begin: </strong> <%= rental.rental_begin %></p>
+            <p class="card-model"><strong>Rental end: </strong> <%= rental.rental_end %></p>
+            <p class="card-model"><strong>Revenue: </strong> <%= rental.car.price * ((rental.rental_end - rental.rental_begin).to_i) %>€</p>
+          </div>
+        <% end %>
+      </div>
     </div>
-  </div>
+  <% end %>
 </div>
