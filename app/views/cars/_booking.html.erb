@@ -1,4 +1,4 @@
-<%= simple_form_for(rental) do |f| %>
+<%= simple_form_for [car, rental] do |f| %>
   <%= f.input :rental_begin %>
   <%= f.input :rental_end %>
   <%= f.submit "Book me", class: 'btn btn-primary' %>

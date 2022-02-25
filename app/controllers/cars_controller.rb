@@ -1,11 +1,16 @@
 class CarsController < ApplicationController
   def index
-    @cars = Car.all
+    if user_signed_in?
+      @cars = Car.all.reject { |car| car.user == current_user }
+    else
+      @cars = Car.all
+    end
   end
 
   def show
     @car = Car.find(params[:id])
     @rental = Rental.new
+    # raise
   end
 
   def new

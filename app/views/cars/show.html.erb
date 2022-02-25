@@ -7,7 +7,8 @@
     <div class="col-12 col-sm-4">
       <h2>Description</h2>
       <p><%= @car.description %></p>
-      <%= render :partial => 'booking', locals: { rental: @rental } %>
+      <h4><strong>Price : </strong> <%= @car.price %>€ / day</h4>
+      <%= render :partial => 'booking', locals: { car: @car, rental: @rental } %>
       <%# <%= render :partial => 'carousel', locals: { car: @car } %>
     </div>
   </div>
